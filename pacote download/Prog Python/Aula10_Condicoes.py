@@ -11,6 +11,4 @@ else:
 
 print('Você é menor de idade' if idade < 18 else 'Você é maior de idade')
 
-print('teste')
-
 print('====FIM====')
