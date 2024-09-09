@@ -8,7 +8,7 @@ import os
 from time import sleep
 
 # Cabeçalho
-os.system('cls' if os.name == 'nt' else 'clear')  # 'nt' é para Windows, 'clear' é para Unix-based
+os.system('cls' if os.name == 'nt' else 'clear')
 print('='*20)
 print('{}MERCADINHO MINIPRECO{}'.format('\033[36m','\033[m'))
 print('='*20)
@@ -23,12 +23,15 @@ sleep(3)
 print('\n{}VAMOS COMEÇAR. . .{}\n'.format('\033[34m','\033[m'))
 sleep(2)
 
+# Definindo variaveis
 tot_compra = 0
 compra_1k = 0
 maior_preco = 0
-prod_caro = ''  # Definindo uma string vazia para o produto mais caro
+prod_caro = '' 
 
+# Inicio do loop
 while True:
+    
     nome = input('\nDigite o {}NOME{} do produto: '.format('\033[35m','\033[m'))
     preco = float(input('Agora digite o {}PRECO{}: R$'.format('\033[32m','\033[m')))
 
@@ -41,15 +44,15 @@ while True:
         prod_caro = nome
         maior_preco = preco
 
-    print('='*30)
-      
+    print('='*30)   
     resp = input('\nQuer continuar as compras? [{}S{}/{}N{}]: '.format('\033[32m','\033[m','\033[31m','\033[m')).lower()
-
     print('='*30)
 
+    #break
     if resp == 'n':
         break
 
+# Printando os resultados
 print('='*30)
 print('\nTotal gastos nas compras: {}{:.2f}{}'.format('\033[32m', tot_compra, '\033[m'))
 print('Total de produtos que custam mais que R$1000,00: {}{}{}'.format('\033[35m', compra_1k, '\033[m'))
